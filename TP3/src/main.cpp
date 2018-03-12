@@ -16,19 +16,14 @@ int main() {
   //p.afficherProduit();
 
   Magasin m;
+  
   //m.afficherClients();
   m.ajouterClient("Maxime");
-  //m.afficherClients();
   m.ajouterClient("Quentin");
-  //m.afficherClients();
-  m.supprimerClient(1);
-  m.afficherClients();
 
   m.ajouterProduit("Bouteille");
-  m.afficherProduits();
   m.ajouterProduit("Hamburger");
-  m.afficherProduits();
-  m.supprimerProduit(5);
-  m.afficherProduits();
+
+  std::cout << m.trouverClientDansLocation(0) << std::endl;
 
 }
