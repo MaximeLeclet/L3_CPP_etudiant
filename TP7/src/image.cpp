@@ -1,6 +1,6 @@
 #include <iostream>
 #include "image.hpp"
-#include <CMath>
+#include <cmath>
 #include <string>
 
 Image::Image(int largeur, int hauteur) : _largeur(largeur), _hauteur(hauteur) {}
@@ -75,7 +75,7 @@ Image Image::bordure(const Image & img, int couleur, int epaisseur) {
 
     Image newImage(img.getHauteur(), img.getLargeur());
 
-    
+
 
 }
 
