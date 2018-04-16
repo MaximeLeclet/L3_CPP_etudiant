@@ -10,6 +10,7 @@ private:
 
 public:
     Image(int largeur, int hauteur);
+    Image(const Image & image);
     int getLargeur() const;
     int getHauteur() const;
     /*

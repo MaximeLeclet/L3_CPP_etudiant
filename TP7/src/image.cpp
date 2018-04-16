@@ -5,6 +5,22 @@
 
 Image::Image(int largeur, int hauteur) : _largeur(largeur), _hauteur(hauteur) {}
 
+Image::Image(const Image & image)
+: _largeur(image.getLargeur), _hauteur(image.getHauteur)
+{
+
+    for(int i = 0; i < image.getHauteur(); i++) {
+
+        for(int j = 0; j < image.getLargeur(); i++) {
+
+            setPixel(i, j, image.getPixel(i, j));
+
+        }
+
+    }
+
+}
+
 int Image::getLargeur() const {
     return _largeur;
 }
@@ -73,9 +89,27 @@ void Image::ecrirePnm(const Image& img, const std::string& nomFichier) {
 
 Image Image::bordure(const Image & img, int couleur, int epaisseur) {
 
-    Image newImage(img.getHauteur(), img.getLargeur());
+    Image newImage(img);
 
+    for(int i = 0; i < img.getHauteur(); i++) {
 
+        for(int j = 0; j < img.getLargeur(); i++) {
+
+            if(i <= epaisseur || i >= (img.getHauteur() - epaisseur) || j <= epaisseur || j => (img.getLargeur() - epaisseur)) {
+
+                newImage.setPixel(i, j, couleur);
+
+            } else {
+
+                newImage.setPixel(i, j, img.getPixel(i, j));
+
+            }
+
+        }
+
+    }
+
+    return newImage;
 
 }
 
